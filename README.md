@@ -1,12 +1,3 @@
-Отлично 🙌 У тебя уже есть скриншоты в `assets/screenshots/`.
-Теперь нужно их подключить в `README.md`.
-
-Обычно картинки кладут в папку `screenshots/` прямо в корне репозитория (не в `assets/`), чтобы в README их легко отображать.
-👉 Но можно и так оставить — просто ссылаться на путь внутри репо.
-
-Пример твоего простого README с добавлением скринов:
-
-````markdown
 # Sign In UI — Flutter
 
 This project contains a ready-to-use **Sign In screen** built with Flutter.
@@ -30,21 +21,3 @@ This project contains a ready-to-use **Sign In screen** built with Flutter.
 ```bash
 git clone <repo-url>
 cd <project-folder>
-````
-
-2. Install dependencies:
-
-```bash
-flutter pub get
-```
-
-3. Run the app:
-
-```bash
-flutter run
-```
-
-### Requirements
-
-* Flutter SDK (stable channel)
-* Package: `flutter_svg`
