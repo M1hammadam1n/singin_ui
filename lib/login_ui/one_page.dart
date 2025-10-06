@@ -24,16 +24,15 @@ class StartPage extends StatelessWidget {
                 children: [
                   SvgPicture.asset(
                     'assets/icons/Vector.svg',
-                    width: 40,
-                    height: 40,
+                    width: MediaQuery.of(context).size.width / 20,
+                    height: MediaQuery.of(context).size.height / 20,
                     colorFilter: const ColorFilter.mode(
                       Color(0xFF375DFB),
                       BlendMode.srcIn,
                     ),
                   ),
-                  SizedBox(width: 10),
                   Text(
-                    "Logoipsum",
+                    "  Logoipsum",
                     style: TextStyle(color: Colors.black, fontSize: 20),
                   ),
                 ],
@@ -42,7 +41,7 @@ class StartPage extends StatelessWidget {
               Text(
                 'Sign in to your \nAccount',
                 style: TextStyle(
-                  fontSize: 45,
+                  fontSize: MediaQuery.of(context).size.width / 10,
                   color: Colors.black,
                   fontWeight: FontWeight.w800,
                 ),
@@ -50,7 +49,10 @@ class StartPage extends StatelessWidget {
               SizedBox(height: MediaQuery.of(context).size.width / 40),
               Text(
                 'Enter your email and password to log in ',
-                style: TextStyle(fontSize: 17, color: Colors.blueGrey),
+                style: TextStyle(
+                  fontSize: MediaQuery.of(context).size.width / 20,
+                  color: Colors.blueGrey,
+                ),
               ),
               SizedBox(height: MediaQuery.of(context).size.width / 12),
               Text(
@@ -65,8 +67,6 @@ class StartPage extends StatelessWidget {
                     hintText: 'Введите адрес эл. почты',
                     filled: true,
                     fillColor: Colors.transparent,
-
-                    // рамка когда поле активно
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(18),
                       borderSide: const BorderSide(
@@ -77,7 +77,7 @@ class StartPage extends StatelessWidget {
                     enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(18),
                       borderSide: const BorderSide(
-                        color: Color(0xFFACB5BB), 
+                        color: Color(0xFFACB5BB),
                         width: 0.8,
                       ),
                     ),
@@ -99,14 +99,17 @@ class StartPage extends StatelessWidget {
                     onPressed: () {},
                     child: Text(
                       "Forgot Password ?",
-                      style: TextStyle(color: Color(0xFF4D81E7), fontSize: 18),
+                      style: TextStyle(
+                        color: Color(0xFF4D81E7),
+                        fontSize: MediaQuery.of(context).size.width / 22,
+                      ),
                     ),
                   ),
                 ],
               ),
               SizedBox(
-                width: double.infinity,
-                height: 55,
+                width: MediaQuery.of(context).size.width / 1.2,
+                height: MediaQuery.of(context).size.height / 15,
                 child: ElevatedButton(
                   onPressed: () {
                     Navigator.push(
@@ -123,9 +126,12 @@ class StartPage extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(vertical: 16),
                     overlayColor: Colors.black,
                   ),
-                  child: const Text(
+                  child: Text(
                     'Log in',
-                    style: TextStyle(color: Colors.white, fontSize: 20),
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: MediaQuery.of(context).size.width / 20,
+                    ),
                     textAlign: TextAlign.center,
                   ),
                 ),
@@ -138,15 +144,18 @@ class StartPage extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(horizontal: 8.0),
                     child: Text(
                       "Or",
-                      style: TextStyle(fontSize: 20, color: Colors.blueGrey),
+                      style: TextStyle(
+                        fontSize: MediaQuery.of(context).size.width / 20,
+                        color: Colors.blueGrey,
+                      ),
                     ),
                   ),
                   Expanded(child: Divider(color: Colors.grey, thickness: 0.5)),
                 ],
               ),
               SizedBox(
-                width: double.infinity,
-                height: 55,
+                width: MediaQuery.of(context).size.width / 1.2,
+                height: MediaQuery.of(context).size.height / 15,
                 child: ElevatedButton(
                   onPressed: () {},
                   style: ElevatedButton.styleFrom(
@@ -162,12 +171,15 @@ class StartPage extends StatelessWidget {
                     children: [
                       SvgPicture.asset(
                         'assets/icons/google.svg',
-                        width: 40,
-                        height: 40,
+                        width: MediaQuery.of(context).size.width / 18,
+                        height: MediaQuery.of(context).size.height / 18,
                       ),
-                      const Text(
+                      Text(
                         'Continue with Google',
-                        style: TextStyle(color: Colors.black, fontSize: 20),
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: MediaQuery.of(context).size.width / 20,
+                        ),
                         textAlign: TextAlign.center,
                       ),
                     ],
@@ -176,8 +188,8 @@ class StartPage extends StatelessWidget {
               ),
               SizedBox(height: MediaQuery.of(context).size.width / 18),
               SizedBox(
-                width: double.infinity,
-                height: 55,
+                width: MediaQuery.of(context).size.width / 1.2,
+                height: MediaQuery.of(context).size.height / 15,
                 child: ElevatedButton(
                   onPressed: () {},
                   style: ElevatedButton.styleFrom(
@@ -193,12 +205,15 @@ class StartPage extends StatelessWidget {
                     children: [
                       SvgPicture.asset(
                         'assets/icons/2021_Facebook_icon 1.svg',
-                        width: 40,
-                        height: 40,
+                        width: MediaQuery.of(context).size.width / 18,
+                        height: MediaQuery.of(context).size.height / 18,
                       ),
-                      const Text(
+                      Text(
                         'Continue with Facebook',
-                        style: TextStyle(color: Colors.black, fontSize: 20),
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: MediaQuery.of(context).size.width / 20,
+                        ),
                         textAlign: TextAlign.center,
                       ),
                     ],
@@ -212,23 +227,23 @@ class StartPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    'Don’t have an account?',
+                    'Don’t have an account?  ',
                     style: TextStyle(
                       color: const Color.fromARGB(255, 143, 143, 143),
-                      fontSize: 20,
+                      fontSize: MediaQuery.of(context).size.width / 20,
                     ),
                   ),
                   Text(
                     'Sign Up',
                     style: TextStyle(
                       color: Colors.blue,
-                      fontSize: 20,
+                      fontSize: MediaQuery.of(context).size.width / 20,
                       fontWeight: FontWeight.w600,
                     ),
                   ),
                 ],
               ),
-              SizedBox(height: MediaQuery.of(context).size.width / 18),
+              SizedBox(height: MediaQuery.of(context).size.width / 15),
             ],
           ),
         ),

@@ -31,12 +31,8 @@ class _TwoPageState extends State<TwoPage> with SingleTickerProviderStateMixin {
   }
 
   LinearGradient _buildGradient(double t) {
-    // t от 0.0 до 1.0 — управляет положением "светлой" части градиента
-    // верхний цвет: #367FE8, нижний: #1CD9DB
     const topColor = Color(0xFF367FE8);
     const bottomColor = Color(0xFF1CD9DB);
-
-    // сдвигаем стопы: делаем мягкий движущийся переход
     final p1 = (0.0 + 0.35 * t).clamp(0.0, 1.0);
     final p2 = (0.65 + 0.35 * t).clamp(0.0, 1.0);
 
@@ -51,7 +47,6 @@ class _TwoPageState extends State<TwoPage> with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // убираем backgroundColor и используем контейнер с градиентом
       body: AnimatedBuilder(
         animation: _anim,
         builder: (context, child) {
@@ -59,7 +54,6 @@ class _TwoPageState extends State<TwoPage> with SingleTickerProviderStateMixin {
             decoration: BoxDecoration(gradient: _buildGradient(_anim.value)),
             child: SafeArea(
               child: Column(
-                //   mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   SizedBox(height: MediaQuery.of(context).size.width / 10),
                   Row(
@@ -67,16 +61,15 @@ class _TwoPageState extends State<TwoPage> with SingleTickerProviderStateMixin {
                     children: [
                       SvgPicture.asset(
                         'assets/icons/Vector.svg',
-                        width: 30,
-                        height: 30,
+                        width: MediaQuery.of(context).size.width / 20,
+                        height: MediaQuery.of(context).size.height / 20,
                         colorFilter: const ColorFilter.mode(
                           Colors.white,
                           BlendMode.srcIn,
                         ),
                       ),
-                      SizedBox(width: 10),
                       const Text(
-                        "Logoipsum",
+                        "  Logoipsum",
                         style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.w700,
@@ -205,8 +198,8 @@ class _TwoPageState extends State<TwoPage> with SingleTickerProviderStateMixin {
                               ],
                             ),
                             SizedBox(
-                              width: double.infinity,
-                              height: 55,
+                              width: MediaQuery.of(context).size.width / 1.2,
+                              height: MediaQuery.of(context).size.height / 15,
                               child: ElevatedButton(
                                 onPressed: () {
                                   Navigator.push(
@@ -272,8 +265,8 @@ class _TwoPageState extends State<TwoPage> with SingleTickerProviderStateMixin {
                               height: MediaQuery.of(context).size.width / 15,
                             ),
                             SizedBox(
-                              width: double.infinity,
-                              height: 55,
+                              width: MediaQuery.of(context).size.width / 1.2,
+                              height: MediaQuery.of(context).size.height / 15,
                               child: ElevatedButton(
                                 onPressed: () {},
                                 style: ElevatedButton.styleFrom(
@@ -285,7 +278,7 @@ class _TwoPageState extends State<TwoPage> with SingleTickerProviderStateMixin {
                                     vertical: 16,
                                   ),
                                   elevation: 2,
-                                  shadowColor: Colors.grey.withOpacity(0.3),
+                                  shadowColor: Colors.grey,
                                   overlayColor: Colors.blueGrey,
                                 ),
                                 child: Row(
@@ -309,11 +302,11 @@ class _TwoPageState extends State<TwoPage> with SingleTickerProviderStateMixin {
                               ),
                             ),
                             SizedBox(
-                              height: MediaQuery.of(context).size.width / 18,
+                              height: MediaQuery.of(context).size.width / 22,
                             ),
                             SizedBox(
-                              width: double.infinity,
-                              height: 55,
+                              width: MediaQuery.of(context).size.width / 1.2,
+                              height: MediaQuery.of(context).size.height / 15,
                               child: ElevatedButton(
                                 onPressed: () {},
                                 style: ElevatedButton.styleFrom(
@@ -325,10 +318,8 @@ class _TwoPageState extends State<TwoPage> with SingleTickerProviderStateMixin {
                                     vertical: 16,
                                   ),
                                   elevation: 2,
-                                  shadowColor: Colors.grey.withOpacity(0.3),
-                                  overlayColor: Colors.blueGrey.withOpacity(
-                                    0.1,
-                                  ),
+                                  shadowColor: Colors.grey,
+                                  overlayColor: Colors.blueGrey,
                                 ),
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
